@@ -35,25 +35,43 @@ const buttonVariants = cva(
   }
 )
 
+interface ButtonProps extends React.ComponentProps<"button">,
+  VariantProps<typeof buttonVariants> {
+    asChild?: boolean;
+    loading?: boolean; // Added loading prop to match mobile version
+}
+
 function Button({
   className,
   variant,
   size,
   asChild = false,
+  loading = false, // Added loading prop with default false
+  children,
+  disabled,
   ...props
-}: React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean
-  }) {
+}: ButtonProps) {
   const Comp = asChild ? Slot : "button"
 
   return (
     <Comp
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
+      disabled={disabled || loading} // Disable button when loading
       {...props}
-    />
+    >
+      {loading ? (
+        // Loading spinner similar to mobile's ActivityIndicator
+        <div className="animate-spin h-4 w-4 border-2 border-current border-t-transparent rounded-full" 
+             role="status" 
+             aria-label="Loading">
+          <span className="sr-only">Loading...</span>
+        </div>
+      ) : (
+        children
+      )}
+    </Comp>
   )
 }
 
-export { Button, buttonVariants }
+export { Button, buttonVariants, type ButtonProps }
