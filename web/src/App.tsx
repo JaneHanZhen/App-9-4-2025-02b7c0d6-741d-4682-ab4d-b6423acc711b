@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Modal } from "@/components/ui/modal"
+import { Button } from "./components/ui/button"
+import { Modal } from "./components/ui/modal"
 import "./App.css"
 
 function App() {

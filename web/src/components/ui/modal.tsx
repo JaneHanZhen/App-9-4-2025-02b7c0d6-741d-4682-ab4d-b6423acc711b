@@ -33,6 +33,8 @@ export function Modal({
     if (isOpen) {
       document.body.style.overflow = 'hidden'
       modalRef.current?.focus()
+    } else {
+      document.body.style.overflow = ''
     }
     
     return () => {
@@ -62,7 +64,7 @@ export function Modal({
         <div 
           ref={modalRef}
           className={cn(
-            "bg-background dark:bg-card rounded-xl p-6 shadow-lg max-w-md mx-4 animate-scale-up",
+            "bg-background dark:bg-card rounded-xl p-6 shadow-lg max-w-md mx-4 animate-fade-in",
             className
           )}
           role="dialog"

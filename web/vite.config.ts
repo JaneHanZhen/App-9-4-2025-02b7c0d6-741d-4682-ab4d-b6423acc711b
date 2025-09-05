@@ -23,19 +23,9 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom')) {
-              return 'vendor';
-            }
-            if (id.includes('@radix-ui') || 
-                id.includes('class-variance-authority') || 
-                id.includes('clsx') || 
-                id.includes('tailwind-merge')) {
-              return 'ui';
-            }
-            return 'vendor'; // All other node_modules
-          }
+        manualChunks: {
+          'vendor': ['react', 'react-dom'],
+          'ui-libs': ['@radix-ui/react-slot', 'class-variance-authority', 'clsx', 'tailwind-merge'],
         }
       }
     },
