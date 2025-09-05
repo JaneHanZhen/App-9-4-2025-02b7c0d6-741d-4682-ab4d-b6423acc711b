@@ -18,14 +18,24 @@ export default [
     ],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
+      globals: {
+        ...globals.browser
+      },
       parser: typescriptParser,
       parserOptions: {
-        project: './tsconfig.json',
+        project: true,
+        ecmaFeatures: {
+          jsx: true
+        }
       },
     },
     plugins: {
       '@typescript-eslint': tseslint,
+    },
+    settings: {
+      react: {
+        version: 'detect'
+      }
     },
   },
 ]
