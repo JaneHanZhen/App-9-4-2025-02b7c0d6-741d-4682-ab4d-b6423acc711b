@@ -10,7 +10,7 @@ export default defineConfig({
     },
   },
   build: {
-    sourcemap: false, // Changed from true to false for production
+    sourcemap: false,
     outDir: "dist",
     cssCodeSplit: true,
     minify: "terser",
@@ -27,7 +27,8 @@ export default defineConfig({
           ui: ['@radix-ui/react-slot', 'class-variance-authority', 'clsx', 'tailwind-merge']
         }
       }
-    }
+    },
+    chunkSizeWarningLimit: 1000 // Increase the chunk size warning limit
   },
   server: {
     port: 3000,
