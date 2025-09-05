@@ -1,4 +1,5 @@
-import { Fragment, ReactNode } from "react"
+import { Fragment } from "react"
+import type { ReactNode } from "react"
 import { cn } from "@/lib/utils"
 
 interface ModalProps {
