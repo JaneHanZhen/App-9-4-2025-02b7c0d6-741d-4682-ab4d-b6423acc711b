@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <div className="flex min-h-svh flex-col items-center justify-center bg-gradient-to-b from-background to-muted">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-background to-muted">
       <div className="max-w-4xl mx-auto text-center px-4">
         <h1 className="text-5xl font-bold tracking-tight mb-6 animate-fade-up">
           Hello Jason!
