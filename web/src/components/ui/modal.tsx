@@ -29,16 +29,18 @@ export function Modal({
     <Fragment>
       {/* Backdrop */}
       <div 
-        className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center animate-fade-in"
+        className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center"
+        style={{animation: 'fade-in 0.3s ease-in-out'}}
         onClick={handleBackdropClick}
         aria-hidden="true"
       >
         {/* Modal content */}
         <div 
           className={cn(
-            "bg-background dark:bg-card rounded-xl p-6 shadow-lg max-w-md mx-4 animate-scale-up",
+            "bg-background dark:bg-card rounded-xl p-6 shadow-lg max-w-md mx-4",
             className
           )}
+          style={{animation: 'scale-up 0.3s ease-out forwards'}}
           role="dialog"
           aria-modal="true"
           aria-labelledby={title ? "modal-title" : undefined}

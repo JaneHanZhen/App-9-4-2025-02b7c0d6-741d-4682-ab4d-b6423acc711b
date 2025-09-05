@@ -50,12 +50,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
         disabled={disabled || loading}
-        data-loading={loading ? "true" : undefined}
+        aria-disabled={disabled || loading}
+        data-loading={loading}
         {...props}
       >
         {loading ? (
           <>
-            <span className="inline-block animate-spin h-4 w-4 border-2 border-current border-t-transparent rounded-full" />
+            <span className="inline-block animate-spin h-4 w-4 border-2 border-current border-t-transparent rounded-full" aria-hidden="true" />
             {children}
           </>
         ) : (

@@ -1,6 +1,6 @@
-import path from "path"
-import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
+import react from "@vitejs/plugin-react"
+import path from "path"
 
 export default defineConfig({
   plugins: [react()],
@@ -10,15 +10,24 @@ export default defineConfig({
     },
   },
   build: {
-    // Ensure source maps for easier debugging
     sourcemap: true,
-    // Improve chunk splitting
+    outDir: "dist",
+    cssCodeSplit: true,
+    minify: "terser",
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom']
+          vendor: ['react', 'react-dom'],
+          ui: ['@radix-ui/react-slot', 'class-variance-authority', 'clsx', 'tailwind-merge']
         }
       }
     }
   },
+  server: {
+    port: 3000,
+    open: true
+  },
+  preview: {
+    port: 3000
+  }
 })
