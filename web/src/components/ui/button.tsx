@@ -35,43 +35,36 @@ const buttonVariants = cva(
   }
 )
 
-interface ButtonProps extends React.ComponentProps<"button">,
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>,
   VariantProps<typeof buttonVariants> {
     asChild?: boolean;
-    loading?: boolean; // Added loading prop to match mobile version
+    loading?: boolean;
 }
 
-function Button({
-  className,
-  variant,
-  size,
-  asChild = false,
-  loading = false, // Added loading prop with default false
-  children,
-  disabled,
-  ...props
-}: ButtonProps) {
-  const Comp = asChild ? Slot : "button"
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, loading = false, children, disabled, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button"
 
-  return (
-    <Comp
-      data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
-      disabled={disabled || loading} // Disable button when loading
-      {...props}
-    >
-      {loading ? (
-        // Loading spinner similar to mobile's ActivityIndicator
-        <div className="animate-spin h-4 w-4 border-2 border-current border-t-transparent rounded-full" 
-             role="status" 
-             aria-label="Loading">
-          <span className="sr-only">Loading...</span>
-        </div>
-      ) : (
-        children
-      )}
-    </Comp>
-  )
-}
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        disabled={disabled || loading}
+        data-loading={loading ? "true" : undefined}
+        {...props}
+      >
+        {loading ? (
+          <>
+            <span className="animate-spin h-4 w-4 border-2 border-current border-t-transparent rounded-full" />
+            <span className="sr-only">Loading...</span>
+          </>
+        ) : (
+          children
+        )}
+      </Comp>
+    )
+  }
+)
+Button.displayName = "Button"
 
-export { Button, buttonVariants, type ButtonProps }
+export { Button, buttonVariants }
