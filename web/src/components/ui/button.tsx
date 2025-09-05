@@ -55,8 +55,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {loading ? (
           <>
-            <span className="animate-spin h-4 w-4 border-2 border-current border-t-transparent rounded-full" />
-            <span className="sr-only">Loading...</span>
+            <span className="inline-block animate-spin h-4 w-4 border-2 border-current border-t-transparent rounded-full" />
             {children}
           </>
         ) : (
