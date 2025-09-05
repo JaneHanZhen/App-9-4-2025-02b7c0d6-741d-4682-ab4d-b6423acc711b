@@ -1,4 +1,4 @@
-import { Fragment } from "react"
+import { Fragment, useEffect, useRef } from "react"
 import type { ReactNode } from "react"
 import { cn } from "@/lib/utils"
 
@@ -17,6 +17,30 @@ export function Modal({
   children, 
   className 
 }: ModalProps) {
+  const modalRef = useRef<HTMLDivElement>(null)
+  
+  // Handle escape key press
+  useEffect(() => {
+    const handleEscapeKey = (e: KeyboardEvent) => {
+      if (isOpen && e.key === 'Escape') {
+        onClose()
+      }
+    }
+    
+    document.addEventListener('keydown', handleEscapeKey)
+    
+    // Focus trap and prevent scroll
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+      modalRef.current?.focus()
+    }
+    
+    return () => {
+      document.removeEventListener('keydown', handleEscapeKey)
+      document.body.style.overflow = ''
+    }
+  }, [isOpen, onClose])
+  
   if (!isOpen) return null
   
   // Close modal when clicking outside content area
@@ -30,12 +54,13 @@ export function Modal({
     <Fragment>
       {/* Backdrop */}
       <div 
-        className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center animate-fade-in"
+        className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center"
         onClick={handleBackdropClick}
         aria-hidden="true"
       >
         {/* Modal content */}
         <div 
+          ref={modalRef}
           className={cn(
             "bg-background dark:bg-card rounded-xl p-6 shadow-lg max-w-md mx-4 animate-scale-up",
             className
@@ -43,6 +68,7 @@ export function Modal({
           role="dialog"
           aria-modal="true"
           aria-labelledby={title ? "modal-title" : undefined}
+          tabIndex={-1}
         >
           {/* Title (if provided) */}
           {title && (
