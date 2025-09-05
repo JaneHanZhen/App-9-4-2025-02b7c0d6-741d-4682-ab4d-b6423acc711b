@@ -55,7 +55,7 @@ function App() {
       </div>
       
       <div className="absolute top-10 right-10">
-        <div className="text-5xl animate-pulse">☀️</div>
+        <div className="text-5xl" style={{ animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite' }}>☀️</div>
       </div>
       
       <div className="absolute bottom-10 left-10">
