@@ -30,14 +30,14 @@ export function Modal({
     <Fragment>
       {/* Backdrop */}
       <div 
-        className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center animate-[fade-in_0.3s_ease-in-out]"
+        className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center animate-fade-in"
         onClick={handleBackdropClick}
         aria-hidden="true"
       >
         {/* Modal content */}
         <div 
           className={cn(
-            "bg-background dark:bg-card rounded-xl p-6 shadow-lg max-w-md mx-4 animate-[scale-up_0.3s_ease-out_forwards]",
+            "bg-background dark:bg-card rounded-xl p-6 shadow-lg max-w-md mx-4 animate-scale-up",
             className
           )}
           role="dialog"
