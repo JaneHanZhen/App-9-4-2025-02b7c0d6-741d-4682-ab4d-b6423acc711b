@@ -23,7 +23,7 @@ function App() {
     <div className="flex min-h-svh flex-col items-center justify-center bg-gradient-to-b from-background to-muted">
       <div className="max-w-4xl mx-auto text-center px-4">
         <h1 className="text-5xl font-bold tracking-tight mb-6 animate-fade-up">
-          Hello Me!
+          Hello Jason!
         </h1>
         <p className="text-xl text-muted-foreground mb-8 animate-fade-up animation-delay-200">
           Welcome to your new React application built with Vite and TypeScript.
@@ -56,7 +56,7 @@ function App() {
       <Modal 
         isOpen={modalVisible}
         onClose={() => setModalVisible(false)}
-        title="Hello zhen"
+        title="Hello Jason"
       >
         <div className="flex justify-center mt-4">
           <Button 
