@@ -4,47 +4,48 @@
 
 :root {
   --radius: 0.625rem;
-  --background: hsl(0 0% 100%);
-  --foreground: hsl(0 0% 3.9%);
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(0 0% 3.9%);
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(0 0% 3.9%);
-  --primary: hsl(0 0% 9%);
-  --primary-foreground: hsl(0 0% 98%);
-  --secondary: hsl(0 0% 96.1%);
-  --secondary-foreground: hsl(0 0% 9%);
-  --muted: hsl(0 0% 96.1%);
-  --muted-foreground: hsl(0 0% 45.1%);
-  --accent: hsl(0 0% 96.1%);
-  --accent-foreground: hsl(0 0% 9%);
-  --destructive: hsl(0 84.2% 60.2%);
-  --destructive-foreground: hsl(0 0% 98%);
-  --border: hsl(0 0% 89.8%);
-  --input: hsl(0 0% 89.8%);
-  --ring: hsl(0 0% 3.9%);
+  /* Summer theme colors */
+  --background: hsl(198, 100%, 95%);    /* Light sky blue background */
+  --foreground: hsl(210, 80%, 20%);     /* Deep blue text */
+  --card: hsl(0, 0%, 100%);             /* White card background */
+  --card-foreground: hsl(210, 80%, 20%); /* Same as foreground */
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(210, 80%, 20%);
+  --primary: hsl(25, 95%, 53%);         /* Vibrant orange for primary */
+  --primary-foreground: hsl(0, 0%, 100%); /* White text on primary */
+  --secondary: hsl(190, 90%, 90%);      /* Light teal for secondary */
+  --secondary-foreground: hsl(200, 80%, 30%); /* Deep blue on secondary */
+  --muted: hsl(46, 100%, 95%);          /* Light yellow for muted */
+  --muted-foreground: hsl(25, 60%, 40%); /* Muted brown text */
+  --accent: hsl(144, 70%, 60%);         /* Bright green for accent */
+  --accent-foreground: hsl(144, 80%, 20%); /* Dark green on accent */
+  --destructive: hsl(0, 84%, 60%);      /* Keep destructive red */
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(46, 80%, 80%);          /* Light gold border */
+  --input: hsl(46, 80%, 80%);           /* Same as border */
+  --ring: hsl(25, 95%, 53%);            /* Same as primary */
 }
 
 .dark {
-  --background: hsl(0 0% 3.9%);
-  --foreground: hsl(0 0% 98%);
-  --card: hsl(0 0% 3.9%);
-  --card-foreground: hsl(0 0% 98%);
-  --popover: hsl(0 0% 3.9%);
-  --popover-foreground: hsl(0 0% 98%);
-  --primary: hsl(0 0% 98%);
-  --primary-foreground: hsl(0 0% 9%);
-  --secondary: hsl(0 0% 14.9%);
-  --secondary-foreground: hsl(0 0% 98%);
-  --muted: hsl(0 0% 14.9%);
-  --muted-foreground: hsl(0 0% 63.9%);
-  --accent: hsl(0 0% 14.9%);
-  --accent-foreground: hsl(0 0% 98%);
-  --destructive: hsl(0 62.8% 30.6%);
-  --destructive-foreground: hsl(0 0% 98%);
-  --border: hsl(0 0% 14.9%);
-  --input: hsl(0 0% 14.9%);
-  --ring: hsl(0 0% 83.1%);
+  --background: hsl(210, 80%, 20%);     /* Deep blue background for dark mode */
+  --foreground: hsl(46, 100%, 95%);     /* Light yellow text */
+  --card: hsl(210, 70%, 25%);           /* Slightly lighter blue for cards */
+  --card-foreground: hsl(46, 100%, 95%);
+  --popover: hsl(210, 70%, 25%);
+  --popover-foreground: hsl(46, 100%, 95%);
+  --primary: hsl(25, 95%, 53%);         /* Keep same vibrant orange */
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(200, 60%, 30%);      /* Darker teal */
+  --secondary-foreground: hsl(46, 100%, 95%);
+  --muted: hsl(210, 50%, 30%);          /* Muted blue */
+  --muted-foreground: hsl(46, 80%, 80%); /* Light gold text */
+  --accent: hsl(144, 50%, 40%);         /* Darker green for accent */
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --border: hsl(25, 50%, 40%);          /* Darker orange border */
+  --input: hsl(25, 50%, 40%);
+  --ring: hsl(25, 95%, 53%);
 }
 
 @layer base {
