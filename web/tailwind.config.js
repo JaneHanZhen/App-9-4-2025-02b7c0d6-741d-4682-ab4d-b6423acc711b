@@ -44,6 +44,9 @@ module.exports = {
       animation: {
         "spin": "spin 1s linear infinite",
         "pulse": "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "fade-in": "fade-in 0.3s ease-in-out",
+        "fade-up": "fade-up 0.3s ease-out",
+        "scale-up": "scale-up 0.3s ease-out forwards",
       },
       keyframes: {
         "spin": {
@@ -52,6 +55,18 @@ module.exports = {
         "pulse": {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: ".5" },
+        },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        "fade-up": {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "scale-up": {
+          "0%": { opacity: "0", transform: "scale(0.95)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
         },
       },
     },

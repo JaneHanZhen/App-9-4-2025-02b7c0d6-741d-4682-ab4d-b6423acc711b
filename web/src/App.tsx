@@ -4,8 +4,8 @@ import { Modal } from "@/components/ui/modal"
 import "./App.css"
 
 function App() {
-  const [modalVisible, setModalVisible] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [modalVisible, setModalVisible] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   
   const showHelloModal = () => {
     setModalVisible(true)
