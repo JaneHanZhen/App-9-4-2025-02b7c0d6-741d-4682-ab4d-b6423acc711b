@@ -49,7 +49,7 @@ function App() {
             loading={isLoading}
             onClick={handleGetStarted}
           >
-            Get Started
+            {isLoading ? "Loading..." : "Get Started"}
           </Button>
         </div>
       </div>

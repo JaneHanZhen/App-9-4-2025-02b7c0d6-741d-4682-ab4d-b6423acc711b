@@ -41,32 +41,15 @@
   color: #888;
 }
 
-/* Modal animation keyframes */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+/* Animation utilities */
+.animation-delay-200 {
+  animation-delay: 200ms;
 }
 
-@keyframes scale-up {
-  from {
-    transform: scale(0.95);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+.animation-delay-300 {
+  animation-delay: 300ms;
 }
 
-/* Utility animation classes */
-.animate-fade-in {
-  animation: fade-in 0.2s ease forwards;
-}
-
-.animate-scale-up {
-  animation: scale-up 0.2s ease forwards;
+.animation-delay-400 {
+  animation-delay: 400ms;
 }

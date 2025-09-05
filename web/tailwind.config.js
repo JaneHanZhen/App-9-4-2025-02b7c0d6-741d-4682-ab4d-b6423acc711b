@@ -45,6 +45,8 @@ module.exports = {
         "fade-in": "fade-in 0.3s ease-in-out",
         "fade-up": "fade-up 0.5s ease-out forwards",
         "scale-up": "scale-up 0.3s ease-out forwards",
+        "spin": "spin 1s linear infinite",
+        "pulse": "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       keyframes: {
         "fade-in": {
@@ -58,6 +60,13 @@ module.exports = {
         "scale-up": {
           "0%": { opacity: "0", transform: "scale(0.95)" },
           "100%": { opacity: "1", transform: "scale(1)" },
+        },
+        "spin": {
+          "to": { transform: "rotate(360deg)" },
+        },
+        "pulse": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: ".5" },
         },
       },
     },
