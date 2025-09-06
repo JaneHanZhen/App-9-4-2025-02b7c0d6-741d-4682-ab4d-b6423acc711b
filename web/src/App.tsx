@@ -23,7 +23,7 @@ function App() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#a6e1fa] via-[#d1f5ff] to-[#ffecb8]">
       <div className="max-w-4xl mx-auto text-center px-4">
         <h1 className="text-5xl font-bold tracking-tight mb-6 text-primary">
-          Hello Me!
+          Hello World!
         </h1>
         <p className="text-xl text-foreground mb-8">
           Enjoy the sunshine and warm weather with this summer-themed application.
